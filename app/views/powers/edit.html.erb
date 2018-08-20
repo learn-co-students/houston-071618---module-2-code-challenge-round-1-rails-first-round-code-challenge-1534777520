@@ -1,0 +1,18 @@
+<%= link_to "<Back to Power", @power %>
+  
+<h1>Edit Power:</h1>
+
+<%= form_with model: @power do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <br>
+
+  <%= f.label :description %>
+  <%= f.text_box :description %>
+  
+  <br>
+  
+  <%= f.submit %>
+<% end %>
