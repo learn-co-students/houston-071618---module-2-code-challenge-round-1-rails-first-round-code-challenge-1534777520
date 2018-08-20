@@ -1,0 +1,22 @@
+<%= link_to "<Back to All Heroine", heroines_path %>
+  
+<h1>Create New Heroine:</h1>
+
+<%= form_with model: @heroine do |f| %>
+
+  <%= f.label :super_name %>
+  <%= f.text_field :super_name %>
+
+  <br>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <br>
+  
+  <%= f.select :power_id, @power_options %>
+  
+  <br>
+  
+  <%= f.submit %>
+<% end %>
