@@ -1,0 +1,13 @@
+<h1><%= @heroine.super_name %></h1>
+<p>
+  <strong>Name:</strong>
+
+  <%= @heroine.name %>
+</p>
+
+<p>Power: <%= link_to @heroine.power.name, power_path(@heroine.power) %></p>
+
+<p><%= link_to 'Delete', @heroine, method: 'delete', data: { confirm: 'Are you sure?' }%></p>
+
+<%= link_to 'Edit', edit_heroine_path(@heroine) %> |
+<%= link_to 'Back', heroines_path %>
