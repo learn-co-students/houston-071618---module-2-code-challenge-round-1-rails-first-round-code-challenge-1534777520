@@ -1,0 +1,14 @@
+<%= form_with model: @heroine do |form| %>
+	<%= form.label :name %>
+	<%= form.text_field :title %>
+	<br>
+	<%= form.label :super_name %>
+	<%= form.text_field :super_name %>
+
+	<br>
+
+	<%= form.select :power_id, Power.all.map { |power| [power.name, power.id]} %>
+
+	<%= form.submit %>
+
+<% end %>
