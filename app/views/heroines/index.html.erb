@@ -1,10 +1,40 @@
-<h2>All Heroines</h2>
+<p id="notice"><%= notice %></p>
 
-<ul>
-  <% @heroines.each do |heroine| %>
-    <li>
-      <%= heroine.super_name %>
-    </li>
-    <br>
-  <% end %>
-</ul>
+<h1>Heroines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Super name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @heroines.each do |heroine| %>
+      <tr>
+        <td><%= heroine.name %></td>
+        <td><%= heroine.super_name %></td>
+        <td><%= link_to 'Show', heroine %></td>
+        <td><%= link_to 'Edit', edit_heroine_path(heroine) %></td>
+        <td><%= link_to 'Delete', heroine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3>Search for heroines by power:</h3>
+
+<% form_tag powers_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<br>
+
+<%= link_to 'New Heroine', new_heroine_path %>
