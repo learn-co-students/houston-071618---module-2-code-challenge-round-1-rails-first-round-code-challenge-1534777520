@@ -1,0 +1,8 @@
+<h3>Heroine:</h3>
+
+<h3><%= @heroine.name %></h3>
+<p><%= @heroine.super_name %></p>
+<p><%= @heroine.name.power %></p>
+<p><%= link_to "Edit This Heroine", edit_heroine_path(@heroine) %></p>
+<p><%= link_to "Delete This Heroine", heroine_path(@heroine), :data => {:confirm => "Are you sure?", :method => "delete"} %></p>
+

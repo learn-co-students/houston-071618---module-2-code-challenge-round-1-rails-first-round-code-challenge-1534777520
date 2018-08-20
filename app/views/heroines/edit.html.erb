@@ -1,0 +1,7 @@
+<h3>Edit a heroine:</h3>
+
+<%= form_with model: @heroine do |form| %>
+  <p>Name: <%= form.text_field :name %></p>
+  <p>Superhero Name: <%= form.text_field :super_name %></p>
+  <%= form.submit %>
+<% end %>
