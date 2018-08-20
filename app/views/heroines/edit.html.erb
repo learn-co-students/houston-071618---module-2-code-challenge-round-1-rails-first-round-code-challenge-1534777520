@@ -1,0 +1,9 @@
+<h1>Heroines: <%=@heroine.super_name%></h1>
+
+
+<%=form_with model: @heroine do |form| %>
+  Name: <%=form.text_field :name %>
+  Super Name: <%=form.text_field :super_name%>
+  Power: <%=form.select :power, @power_options %>
+  <%=form.submit%>
+<%end%>

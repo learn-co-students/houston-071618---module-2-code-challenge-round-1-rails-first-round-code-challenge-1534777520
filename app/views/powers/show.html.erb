@@ -1,0 +1,11 @@
+<h1>Power: <%= @power.name%></h1>
+<%=button_to 'Edit Power', edit_power_path, method: 'get'%>
+<br>
+<%=@power.description%>
+
+<p>Super Heroines who have this power: </p>
+
+<ul> <%@power.heroines.each do |heroine|%>
+  <li><%=link_to heroine.super_name, heroine_path(heroine)%></li>
+<%end%>
+</ul>

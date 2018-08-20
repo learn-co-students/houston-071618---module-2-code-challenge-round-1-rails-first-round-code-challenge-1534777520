@@ -1,10 +1,15 @@
-<h2>All Heroines</h2>
+<h1>Heroines#index</h1>
+<%=button_to 'New Heroine', new_heroine_path, method: 'get'%>
+
+<!-- <h3>working on: search by super_power form</h3>
+<%= form_with url: '/search', method: :get, local: true do |form| %>
+  <%= form.label :super_power, "Search for:" %>
+  <%= form.text_field :super_power, id: :super_name %>
+  <%= form.submit "Search" %>
+<% end %> -->
 
 <ul>
-  <% @heroines.each do |heroine| %>
-    <li>
-      <%= heroine.super_name %>
-    </li>
-    <br>
-  <% end %>
+  <%@heroines.each do |heroine|%>
+<li><%=link_to heroine.super_name, heroine_path(heroine)%></li>
+<%end%>
 </ul>

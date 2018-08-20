@@ -1,0 +1,9 @@
+<h1>Powers#edit</h1>
+<p>Find me in app/views/powers/edit.html.erb</p>
+
+<%=form_with model: @power do |form| %>
+  Name: <%=form.text_field :name %>
+  Description: <%=form.text_field :description%>
+  Super Heroine:   <%=form.collection_select :heroine_ids, Heroine.all, :id, :super_name %>
+  <%=form.submit%>
+<%end%>
