@@ -2,9 +2,11 @@
 
 <ul>
   <% @heroines.each do |heroine| %>
-    <li>
-      <%= heroine.super_name %>
-    </li>
+    <div>
+      <%= link_to heroine.super_name.titleize, heroine %>
+    </div>
     <br>
   <% end %>
 </ul>
+
+<%= link_to 'New Heroine', new_heroine_path %>

@@ -2,11 +2,11 @@
 
 <ul>
   <% @powers.each do |power| %>
-    <li>
-      <%= power.name %>
+    <div>
+      <%= link_to power.name.titleize, power %>
       <br>
       Description: <%= power.description %>
-    </li>
+    </div>
     <br>
   <% end %>
 </ul>
