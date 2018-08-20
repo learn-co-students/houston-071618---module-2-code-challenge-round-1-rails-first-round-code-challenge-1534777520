@@ -4,7 +4,9 @@
       <div class="card blue-grey lighten-1 hoverable">
         <div class="card-content white-text">
           <h5 class="card-title center-align pink white-text"><%= @heroine.name %></h5>
-          <p class="center-align"><%= @heroine.description %></p>
+          <p class="center-align">Super Name: <%= @heroine.super_name %></p>
+
+          <p class="center-align">Power: <%= @heroine.power.name %></p>
         </div>
         <div class="card-action black">
           <%= link_to 'Back', heroines_path, class: 'light-blue-text' %>

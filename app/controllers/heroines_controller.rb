@@ -1,9 +1,7 @@
 class HeroinesController < ApplicationController
-  before_action :set_heroine, only: [:show, :edit, :update, :destroy]
-
   # GET /heroines
   def index
-    if params[:query] != nil
+    unless params[:query] == nil
       power_name = params[:query]
       power = Power.find_by(name: power_name)
 
@@ -12,7 +10,6 @@ class HeroinesController < ApplicationController
       else
         @heroines = Heroine.all
       end
-
     else
       @heroines = Heroine.all
     end
@@ -20,24 +17,24 @@ class HeroinesController < ApplicationController
 
   # GET /heroines/1
   def show
+    @heroine = Heroine.find(params[:id])
   end
 
   # GET /heroines/new
   def new
-    @heroine = Heroine.where("power_id = ?", power.id)
+    @heroine = Heroine.new
     @powers = Power.all
   end
 
   # GET /heroines/1/edit
   def edit
-    @heroine = Heroine.new
+    @heroine = Heroine.where("power_id = ?", power.id)
     @powers = Power.all
   end
 
   # POST /heroines
   def create
     @heroine = Heroine.new(heroine_params)
-
     if @heroine.save
       redirect_to heroine_path(@heroine)
     else

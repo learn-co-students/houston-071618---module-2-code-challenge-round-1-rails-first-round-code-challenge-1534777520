@@ -17,8 +17,7 @@
   <%= f.label :super_name %>:
   <%= f.text_field :super_name %><br />
 
-  <%= f.label "Power" %>:
-  <%= f.collection_select :power_id, @powers, :id, :name %>
-
+  <%= f.label :power_id %>:
+  <%= f.collection_select :power_id, @powers.order(:name),:id,:name, include_blank: true %>
   <%= f.submit %>
 <% end %>

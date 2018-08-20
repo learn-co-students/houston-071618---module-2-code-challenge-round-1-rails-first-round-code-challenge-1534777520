@@ -4,6 +4,7 @@
 
 <%= link_to 'Show', @heroine %> |
 <%= link_to 'Back', heroines_path %>
+
 <%= form_for @heroine do |f| %>
   <%= f.label :name %>:
   <%= f.text_field :name %><br />
@@ -16,3 +17,4 @@
 
   <%= f.submit %>
 <% end %>
+
