@@ -2,7 +2,11 @@ class HeroinesController < ApplicationController
   before_action :load_heroine
   
   def index
-    @heroines = Heroine.all
+    if params[:id]
+      @heroines = Heroine.where('power LIKE ?', "%#{params[:power]}%")
+    else
+      @heroines = Heroine.all
+    end
   end
   
   def show
@@ -52,6 +56,6 @@ class HeroinesController < ApplicationController
   end
   
   def heroine_params
-    params.require(:heroine).permit(:name, :super_name, :power_id)
+    params.require(:heroine).permit(:name, :super_name, :power_id, :q)
   end
 end
