@@ -1,0 +1,11 @@
+<h1>Superpower: <%= @power.name %></h1>
+<p>
+  <strong>Description:</strong>
+
+  <%= @power.description %>
+
+</p>
+
+<p><%= link_to 'Delete', @heroine, method: 'delete', data: { confirm: 'Are you sure?' }%></p>
+<%= link_to 'Edit', edit_power_path(@power) %> |
+<%= link_to 'Back', powers_path %>

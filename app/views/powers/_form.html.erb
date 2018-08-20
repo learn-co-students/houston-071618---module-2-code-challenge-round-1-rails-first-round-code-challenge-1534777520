@@ -1,0 +1,15 @@
+<%= form_with model: @power do |form| %>
+  <div class="field">
+    <%= form.label 'Name' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Description' %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
