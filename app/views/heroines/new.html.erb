@@ -1,0 +1,10 @@
+<h1>Create New Heroine</h1>
+
+<div><%= form_with model: Heroine.new do |form| %>
+  <div>Name: <%= form.text_field :name %></div>
+  <div>Super Name: <%= form.text_field :super_name %></div>
+  <div>Super Power: <%= form.collection_select :power_id, Power.order(:name),:id,:name, include_blank: true %></div>
+  <div> <%= form.submit %></div>
+<% end %></div>
+
+<%= link_to 'Back', heroines_path %>

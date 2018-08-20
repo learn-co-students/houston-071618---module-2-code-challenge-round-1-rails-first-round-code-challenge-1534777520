@@ -1,0 +1,6 @@
+<h2><%= @heroine.super_name.titleize %></h2>
+
+<div>Real Name: <%= @heroine.name %></div>
+<div>Power: <%= link_to @heroine.power.name, power_path(@heroine.power) %></div>
+
+<%= link_to 'Back', heroines_path %>
