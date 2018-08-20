@@ -1,6 +1,11 @@
 class HeroinesController < ApplicationController
-  def index
-    @heroines = Heroine.all
+
+ def index
+    if params[:search]
+      @heroines = Heroine.joins(:power).where("powers.name LIKE ?", "%#{params[:search]}%")
+    else
+      @heroines = Heroine.all
+    end
   end
 
   def show
