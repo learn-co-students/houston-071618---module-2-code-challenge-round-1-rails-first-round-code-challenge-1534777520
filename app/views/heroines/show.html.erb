@@ -1,0 +1,12 @@
+<h1> <%= @heroine.name %> </h1>
+
+<ul> <%= @heroine.super_name %> </ul>
+<ul> Power: <%= link_to "#{@heroine.power.name}", power_path(@heroine.power.id) %> </ul>
+
+<button>
+  <%= link_to 'Return to all heroines', heroines_path %>
+</button>
+
+<button>
+  <%= link_to 'See all superpowers', powers_path %>
+</button>
