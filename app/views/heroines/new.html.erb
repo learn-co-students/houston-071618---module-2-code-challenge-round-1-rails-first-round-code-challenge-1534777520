@@ -1,0 +1,8 @@
+<h3>Create a new heroine:</h3>
+
+<%= form_with model: Heroine.new do |form| %>
+  <p>Name: <%= form.text_field :name %></p>
+  <p>Superhero Name: <%= form.text_field :super_name %></p>
+  <p>Select a Power: <%= form.collection_select :power_id, Power.all, :id, :name, prompt: true %></p><br>
+  <%= form.submit %>
+<% end %>

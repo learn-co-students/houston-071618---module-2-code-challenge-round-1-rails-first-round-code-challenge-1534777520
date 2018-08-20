@@ -1,0 +1,7 @@
+<h3>Create a new power:</h3>
+
+<%= form_with model: Power.new do |form| %>
+  <p>Power Name: <%= form.text_field :name %></p>
+  <p>Description: <%= form.text_field :description %></p>
+  <%= form.submit %>
+<% end %>
