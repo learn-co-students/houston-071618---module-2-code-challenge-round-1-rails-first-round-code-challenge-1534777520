@@ -1,10 +1,31 @@
-<h2>All Heroines</h2>
+<p id="notice"><%= notice %></p>
+<h1 class="center-align">Heroines</h1>
 
-<ul>
-  <% @heroines.each do |heroine| %>
-    <li>
-      <%= heroine.super_name %>
-    </li>
-    <br>
+  <%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
   <% end %>
-</ul>
+
+  <div class="row">
+  <% @heroines.each do |heroine| %>
+    <div class="col s6 m6">
+      <div class="card blue-grey lighten-1 hoverable">
+        <div class="card-content white-text">
+          <h5 class="card-title center-align pink white-text"><%= heroine.name %></h5>
+          <p class="center-align">Supername: <%= heroine.super_name %></p>
+          <p class="center-align">Power: <%= heroine.power.name %></p>
+        </div>
+        <div class="card-action black">
+          <%= link_to 'Edit', edit_heroine_path(heroine), class: 'light-blue-text' %>
+          <%= link_to 'Delete', heroine, method: :delete, data: { confirm: 'Are you sure?' }, class: 'red-text' %>
+          <%= link_to 'Show', heroine, class: 'green-text' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
+<br>
+
+<%= link_to 'New Heroine', new_heroine_path, class: 'btn-floating btn-large waves-effect waves-light red' %>

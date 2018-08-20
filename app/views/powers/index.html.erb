@@ -1,12 +1,25 @@
-<h2>All Superpowers</h2>
+<p id="notice"><%= notice %></p>
 
-<ul>
+<h1 class="center-align">Powers</h1>
+
+  <div class="row">
   <% @powers.each do |power| %>
-    <li>
-      <%= power.name %>
-      <br>
-      Description: <%= power.description %>
-    </li>
-    <br>
+    <div class="col s6 m6">
+      <div class="card blue-grey lighten-1 hoverable">
+        <div class="card-content white-text">
+          <h5 class="card-title center-align pink white-text"><%= power.name %></h5>
+          <p class="center-align"><%= power.description %></p>
+        </div>
+        <div class="card-action black">
+          <%= link_to 'Edit', edit_power_path(power), class: 'light-blue-text' %>
+          <%= link_to 'Delete', power, method: :delete, data: { confirm: 'Are you sure?' }, class: 'red-text' %>
+          <%= link_to 'Show', power, class: 'green-text' %>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+  </div>
+
+<br>
+
+<%= link_to 'New Power', new_power_path, class: 'btn-floating btn-large waves-effect waves-light red' %>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="col s6 m6">
+      <div class="card blue-grey lighten-1 hoverable">
+        <div class="card-content white-text">
+          <h5 class="card-title center-align pink white-text"><%= @heroine.name %></h5>
+          <p class="center-align">Super Name: <%= @heroine.super_name %></p>
+
+          <p class="center-align">Power: <%= @heroine.power.name %></p>
+        </div>
+        <div class="card-action black">
+          <%= link_to 'Back', heroines_path, class: 'light-blue-text' %>
+          <%= link_to 'Edit', edit_heroine_path(@heroine), class: 'light-blue-text' %>
+          <%= link_to 'Delete', @heroine, method: :delete, data: { confirm: 'Are you sure?' }, class: 'red-text' %>
+        </div>
+      </div>
+    </div>
