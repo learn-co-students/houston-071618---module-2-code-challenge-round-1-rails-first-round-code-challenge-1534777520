@@ -1,0 +1,21 @@
+<%= form_with(model: Heroine.new) do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+	<div class="field">
+    <%= form.label :super_name %>
+    <%= form.text_field :super_name %>
+  </div>
+
+	<div class="field">
+    <%= form.collection_select :power_id, Power.all, :id, :name %>
+  </div>
+
+	<%= form.submit %>
+
+
+
+<% end %>
