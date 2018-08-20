@@ -1,0 +1,6 @@
+<%= form_with model: @heroine do |form| %>
+  <%= form.text_field :name, placeholder: "name"  %>
+  <%= form.text_field :super_name, placeholder: "super_name" %>
+  <%= form.select :power_id, Power.all.collect { |p| p.name }%>
+  <%= form.submit  %>
+<% end %>
