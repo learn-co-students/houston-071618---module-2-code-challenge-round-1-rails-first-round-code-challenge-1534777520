@@ -1,10 +1,17 @@
+<div align="CENTER"><Label>QUICK NAV</label><br>
+  <%= button_to "Heroines", heroines_path, method: "get"  %>
+  <%= button_to "Powers", powers_path, method: "get" %>
+</div>
 <h2>All Heroines</h2>
 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%=link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+
+
+  <%= button_to "Create Heroine", new_heroine_path, method: "get" %>

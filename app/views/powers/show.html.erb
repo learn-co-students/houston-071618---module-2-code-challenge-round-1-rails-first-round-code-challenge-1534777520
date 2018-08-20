@@ -1,0 +1,5 @@
+<h2><%= @power.name %></h2>
+<label>Description:</label><p><%= @power.description %></p>
+
+<%= button_to 'Edit', edit_power_path(@power), method: 'get'%>
+<%= button_to 'Remove', @power, method: 'delete', data: { confirm: 'Are you sure?' } %>

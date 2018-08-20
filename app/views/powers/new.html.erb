@@ -1,0 +1,7 @@
+<h2>Make-A-Power</h2>
+
+  <%= form_with model: Power.new do |form|%>
+  <div><label>Name: </label> <%= form.text_field :name %></div>
+  <div><label>Description: </label> <%= form.text_field :description %></div>
+  <%= form.submit %>
+  <% end %>
