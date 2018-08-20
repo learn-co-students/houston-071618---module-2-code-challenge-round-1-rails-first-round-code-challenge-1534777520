@@ -1,0 +1,10 @@
+<p>Create New Heroine</p>
+<%= form_with model: @heroine do |form| %>
+<h3>Name</h3>
+  <%= form.text_field :name, placeholder: 'name' %> <br>
+  <h3>Super Name</h3>
+  <%= form.text_field :super_name, placeholder:'super_name' %>
+   <h3>Power</h3>
+  <%= form.collection_select :power_id, @powers.order(:name),:id,:name %>
+<% end %>
+
