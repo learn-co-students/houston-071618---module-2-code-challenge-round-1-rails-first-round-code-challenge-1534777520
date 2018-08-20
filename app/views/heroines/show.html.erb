@@ -1,0 +1,14 @@
+<p>show erb file</p>
+ 
+ <h1><%= @heroine.super_name %></h1><br>
+
+ <h3>Real Name </h3>
+ <h1><%= @heroine.name %></h1><br>
+
+ <h3>Super Power</h3>
+ <%power = @power.find(@heroine.power_id)%>
+ <h1><%= link_to power.name, power_path%></h1>
+ <br><br>
+ 
+ <%= link_to 'Edit' , edit_heroine_path  %>
+ <%= link_to 'Destroy', @control_table, method: :delete, data: { confirm: 'Heroine will be removed. OK to contunue' } %> 
