@@ -1,0 +1,12 @@
+<!-- needs heroine name super name and power(power link to POWER SHOW PAGE) -->
+<h1><%= @heroine.super_name %></h1>
+<h3> Name: </h3>
+<p><%= @heroine.name %></p><br>
+
+<h3> Super Name:</h3>
+<p><%= @heroine.super_name %></p><br>
+
+<h3> Power: </h3>
+<p>
+  <%= link_to @heroine.power.name, power_path(@heroine.power) %>
+</p>
