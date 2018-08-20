@@ -1,0 +1,7 @@
+<h3> Create New Heroine </h3>
+<%= form_with model: @heroine do |f| %>
+  <%= f.text_field :name, placeholder: "name" %>
+  <%= f.text_field :super_name, placeholder: "super_name" %>
+  <%= f.select :power_id, @power_select %>
+  <%= f.submit "Create"%>
+<% end %>
