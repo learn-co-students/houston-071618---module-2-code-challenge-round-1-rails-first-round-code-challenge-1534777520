@@ -22,6 +22,14 @@ Luckily, another developer has already started the job. We have a model for hero
 
 We have several different powers and each can be bestowed upon **more than one heroine**. Each heroine can only have **one power**.
 
+# heroine belongs to a power
+# power has many heroines
+
+# power - teleport, fly, shrink
+# heroine1 - teleport only
+# heroine2 - fly only
+# heroine3 - fly only
+
 ## Instructions / Deliverables
 
 Read through the instructions to get a sense of the scope of this code challenge, and then tackle them one by one.

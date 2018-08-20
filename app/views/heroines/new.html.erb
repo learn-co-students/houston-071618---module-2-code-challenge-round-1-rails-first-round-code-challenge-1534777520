@@ -1,0 +1,9 @@
+<h2>Create Heroine:</h2>
+<%= form_for @heroine do |f| %>
+<%= f.label :name %><br>
+<%= f.text_field :name %><br>
+<%= f.label :super_name %><br>
+<%= f.text_field :super_name %><br>
+<%= f.select :power_id, Power.all.map { |p| [p.name, p.id] } %>
+<%= f.submit %>
+<% end %>
