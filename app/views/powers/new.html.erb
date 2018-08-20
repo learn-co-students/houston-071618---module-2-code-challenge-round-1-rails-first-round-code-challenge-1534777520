@@ -1,0 +1,8 @@
+<h1>Create New Power: </h1>
+
+<%=form_with model: @power do |form| %>
+  Name: <%=form.text_field :name %>
+  Description: <%=form.text_field :description%>
+  Super Heroine:   <%=form.collection_select :heroine_ids, Heroine.all, :id, :super_name %>
+  <%=form.submit%>
+<%end%>
