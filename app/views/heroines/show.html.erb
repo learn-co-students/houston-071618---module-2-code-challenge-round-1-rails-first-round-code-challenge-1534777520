@@ -1,0 +1,9 @@
+<h1><%= link_to "Heroines Main Page", heroines_path %></h1>
+<h2><%= @heroine.super_name%></h2><br>
+
+<p>Name: <%= @heroine.name %></p>
+<p>Superpower:
+  <li><%= link_to @heroine.power_name, power_path(Power.find_by(name: @heroine.power_name))%></li>
+</p>
+
+<%= link_to "Delete", heroine_path(@heroine), method: :delete %><br>
