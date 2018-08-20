@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @heroine.name %>
+</p>
+
+<p>
+  <strong>Super name:</strong>
+  <%= @heroine.super_name %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @heroine.power.name %>
+  <br>
+  <%= @heroine.power.description %>
+</p>
+
+<%= link_to 'Edit', edit_heroine_path(@heroine) %> |
+<%= link_to 'Back', heroines_path %>

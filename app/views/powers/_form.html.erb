@@ -1,0 +1,19 @@
+<%= form_with(model: power) do |form| %>
+  
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :power_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :power_description %>
+  </div>
+
+ 
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<%= form_with(model: heroine) do |form| %>
+  
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :heroine_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :super_name %>
+    <%= form.text_field :super_name, id: :heroine_super_name %>
+  </div>
+
+  <div class="field">
+    <%= form.select :power_id, @powers.collect {|power| [power.name, power.id]} %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
