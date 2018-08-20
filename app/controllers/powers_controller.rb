@@ -6,7 +6,7 @@ class PowersController < ApplicationController
   end
 
   def show
-    @heroines = Heroine.all
+    @matching_heroines = Heroine.all.select {|heroine| heroine.power == @power}
   end
 
   def new

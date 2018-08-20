@@ -5,10 +5,7 @@
 </ul>
 <h2>Heroines with Given Power:</h2>
 <ul>
-  <% @heroines.each do |heroine| %>
+  <% @matching_heroines.each do |heroine| %>
     <li><%= link_to heroine.name, heroine %></li>
   <% end %>
 </ul>
-
-<%= link_to "Edit Power", edit_power_path %>
-<%= link_to "Delete Power", @power, :method => "delete" %>
