@@ -1,0 +1,10 @@
+<h2>Edit-A-Heroine</h2>
+
+
+  <%= form_with model: @heroine do |form|%>
+  <div><label>Name: </label> <%= form.text_field :name %></div>
+  <div><label>Super Name: </label> <%= form.text_field :super_name %></div>
+  <div><label>Power: </label> <%=select(:power, :heroine_id, Power.all.collect {|p| [ p.name, p.id ] }, { include_blank: true })%></div>
+
+  <%= form.submit %>
+  <% end %>

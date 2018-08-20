@@ -4,6 +4,8 @@ class CreateHeroines < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :super_name
 
+      t.belongs_to :power #powers belong to heroines
+
       t.timestamps
     end
   end

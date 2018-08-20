@@ -1,0 +1,6 @@
+<h2><%= @heroine.name  %></h2><br>
+<label>Super Name: </label> <div><p><%= @heroine.super_name %></p></div>
+<label>Power: </label> <div><p><%= link_to Power.all.find(@heroine.power_id).name, Power.all.find(@heroine.power_id) %></p></div>
+
+<%= button_to 'Edit', edit_heroine_path(@heroine), method: 'get'%>
+<%= button_to 'Remove', @heroine, method: 'delete', data: { confirm: 'Are you sure?' } %>
