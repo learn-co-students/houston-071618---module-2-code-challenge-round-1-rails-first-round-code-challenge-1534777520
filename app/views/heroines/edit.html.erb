@@ -1,0 +1,9 @@
+<h2>Edit <%= @heroine.name %></h2>
+
+<%= form_with model: @heroine do |f| %>
+	<%= f.text_field :name, placeholder: "Name" %><br>
+	<%= f.text_field :super_name, placeholder: "Alias" %><br>
+	<%= f.collection_select :power_id, Power.all, :id, :name %><br>
+
+	<%= f.submit "Reborn" %>
+<% end %>

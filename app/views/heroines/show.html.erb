@@ -1,0 +1,8 @@
+<h2>Name: <%= @heroine.name %></h2>
+<h4>Alias: <%= @heroine.super_name %></h4>
+
+<h4>Power: <%= link_to @heroine.power.name, @heroine.power %></h4>
+<p>Description: <%= @heroine.power.description %></p>
+
+
+<%= link_to "Edit", edit_heroine_path %>
